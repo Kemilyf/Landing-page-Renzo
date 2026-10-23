@@ -166,3 +166,39 @@ main,header,footer,section,.wrap,.hero-grid,.hero-copy,.hero-art,.story-grid,.st
   .sponsor-panel{padding:24px 18px}
   .source-links{grid-template-columns:minmax(0,1fr)}
 }
+
+/* Final mobile viewport override: ensure the layout uses the full device width */
+@media screen and (max-width: 600px) {
+  body { overflow-x: hidden !important; }
+  .wrap, .nav, .hero-grid { width: auto !important; max-width: none !important; margin-left: 16px !important; margin-right: 16px !important; }
+  .topbar, .topbar .nav { max-width: 100vw !important; }
+  .nav { display: flex !important; height: 64px !important; padding: 0 !important; gap: 8px !important; }
+  .brand { flex: 1 1 auto !important; min-width: 0 !important; gap: 7px !important; font-size: 0.72rem !important; letter-spacing: .02em !important; white-space: nowrap; }
+  .monogram { flex: 0 0 34px !important; width: 34px !important; height: 34px !important; }
+  .mobile-menu-toggle { display: inline-flex !important; flex: 0 0 auto !important; padding: 9px 10px !important; font-size: .78rem !important; }
+  .nav-cta { display: none !important; }
+  .nav-links.mobile-open { position: absolute !important; top: 64px !important; left: 0 !important; right: 0 !important; width: 100% !important; margin: 0 !important; padding: 10px 16px !important; box-sizing: border-box !important; }
+  .hero { width: 100% !important; min-height: 0 !important; overflow: hidden !important; }
+  .hero-grid { display: flex !important; flex-direction: column !important; align-items: stretch !important; gap: 24px !important; padding-top: 34px !important; padding-bottom: 32px !important; }
+  .hero-copy { display: block !important; width: 100% !important; max-width: none !important; overflow: visible !important; }
+  .hero .eyebrow { font-size: .58rem !important; letter-spacing: .09em !important; white-space: normal !important; }
+  .hero h1, .hero-copy .display { display: block !important; width: 100% !important; max-width: 100% !important; font-size: clamp(2.45rem, 11.7vw, 3.55rem) !important; line-height: .98 !important; letter-spacing: -.015em !important; overflow-wrap: normal !important; word-break: normal !important; margin: 18px 0 !important; }
+  .hero h1 br { display: block !important; }
+  .hero h1 span { display: block !important; overflow-wrap: anywhere !important; }
+  .hero-lede { width: 100% !important; max-width: none !important; font-size: .92rem !important; line-height: 1.72 !important; }
+  .hero-actions { display: flex !important; flex-direction: column !important; width: 100% !important; gap: 10px !important; }
+  .hero-actions .btn, .hero-actions .btn-ghost { display: flex !important; width: 100% !important; max-width: none !important; min-height: 48px !important; box-sizing: border-box !important; white-space: normal !important; text-align: center !important; font-size: .7rem !important; line-height: 1.4 !important; }
+  .hero-note { width: 100% !important; font-size: .76rem !important; line-height: 1.55 !important; }
+  .hero-art { width: 100% !important; min-height: 0 !important; padding: 0 0 8px !important; display: grid !important; place-items: center !important; }
+  .hero-photo-frame { width: min(100%, 320px) !important; max-width: 100% !important; margin: 0 auto !important; }
+  .hero-photo { display: block !important; width: 100% !important; max-width: 100% !important; height: auto !important; }
+  .vertical-label { display: none !important; }
+  .stats-grid, .achievement-grid, .gallery-grid, .contact-grid, .source-links { grid-template-columns: minmax(0, 1fr) !important; }
+  .section { padding: 52px 0 !important; }
+  .section-head h2 { font-size: clamp(2.1rem, 9.5vw, 3rem) !important; line-height: .98 !important; overflow-wrap: anywhere !important; }
+  .story-grid, .sponsor-panel { display: grid !important; grid-template-columns: minmax(0,1fr) !important; gap: 22px !important; }
+  .timeline-row { grid-template-columns: 44px minmax(0,1fr) !important; gap: 10px !important; }
+  .sponsor-panel { padding: 24px 18px !important; }
+  .sponsor-panel h2 { font-size: clamp(2.2rem, 10vw, 3.2rem) !important; overflow-wrap: anywhere !important; }
+  .contact-card, .source-links a { overflow-wrap: anywhere !important; }
+}
