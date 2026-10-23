@@ -28,14 +28,24 @@
     @media(max-width:850px){.nav-links{display:none}.hero-grid{grid-template-columns:1fr;gap:20px;padding:72px 0 50px}.hero{min-height:auto}.hero-art{min-height:410px}.hero:after{width:85vw;right:-30vw;top:42%}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat{padding:22px!important;border-bottom:1px solid rgba(20,18,12,.2)}.stat:nth-child(2){border-right:0}.stat:nth-child(3),.stat:nth-child(4){border-bottom:0}.story-grid{grid-template-columns:1fr;gap:30px}.achievement-grid{grid-template-columns:repeat(2,1fr)}.sponsor-panel{grid-template-columns:1fr;gap:25px}.sponsor-panel:after{font-size:14rem;bottom:-45px}}
     @media(max-width:560px){.wrap{width:min(var(--max),calc(100% - 32px))}.section{padding:72px 0}.nav{height:68px}.nav-cta{padding:11px 12px;font-size:.67rem}.brand{font-size:.82rem}.hero h1{font-size:clamp(4rem,19vw,6rem)}.hero-lede{font-size:.94rem}.hero-art{min-height:350px}.athlete-card{width:min(78%,310px)}.orbit{width:90%}.vertical-label{right:-2px}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat strong{font-size:3.2rem}.achievement-grid{grid-template-columns:1fr}.achievement{min-height:180px}.timeline-row{grid-template-columns:76px 1fr;gap:16px}.timeline-year{font-size:1.7rem}.contact-grid{grid-template-columns:1fr}.footer-inner{align-items:flex-start;flex-direction:column}.hero-actions .btn{flex:1 1 100%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+  
+    .hero-photo{position:relative;z-index:1;width:min(100%,390px);aspect-ratio:4/5;object-fit:cover;object-position:center 22%;border:1px solid rgba(240,219,165,.45);box-shadow:22px 22px 0 rgba(215,181,109,.10);filter:saturate(.92)}
+    .hero-photo-frame{position:relative;display:grid;place-items:center;width:100%}.hero-photo-frame:before{content:"";position:absolute;inset:6% 8%;border:1px solid rgba(215,181,109,.35);transform:rotate(3deg)}
+    .gallery{background:#151513}.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.gallery-card{margin:0;background:var(--panel);border:1px solid rgba(255,255,255,.08);overflow:hidden}.gallery-card button{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in;text-align:left;color:inherit}.gallery-card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;transition:transform .35s ease}.gallery-card button:hover img{transform:scale(1.025)}.gallery-caption{padding:18px 20px 21px}.gallery-caption small{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:.15em;font-size:.68rem;font-weight:700}.gallery-caption h3{margin:6px 0 4px;font:700 1.5rem/1.05 "Barlow Condensed",sans-serif;text-transform:uppercase}.gallery-caption p{margin:0;color:var(--muted);font-size:.84rem}
+    .lightbox{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:24px}.lightbox.open{display:flex}.lightbox img{max-width:min(92vw,900px);max-height:82vh;object-fit:contain}.lightbox-close{position:absolute;top:18px;right:20px;border:1px solid #aaa;background:#181818;color:white;padding:12px 16px;font:inherit;cursor:pointer}.lightbox:focus{outline:0}
+    .mobile-menu-toggle{display:none;border:1px solid var(--line);background:transparent;color:var(--text);padding:10px 12px;font:inherit}.nav-links a:focus-visible,.mobile-menu-toggle:focus-visible{outline:2px solid var(--gold2);outline-offset:4px}
+    @media(max-width:850px){.hero-photo{width:min(78%,350px)}.gallery-grid{gap:14px}.nav-links.mobile-open{display:flex;position:absolute;top:76px;left:0;right:0;padding:20px 22px;background:#151513;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}.mobile-menu-toggle{display:inline-flex;align-items:center;justify-content:center}.nav{position:relative}}
+    @media(max-width:560px){.gallery-grid{grid-template-columns:1fr}.gallery-card img{aspect-ratio:4/4.5}.nav-links.mobile-open{top:68px}.hero-photo{width:min(82%,310px)}}
+    @media(prefers-reduced-motion:reduce){.gallery-card img{transition:none}}
   </style>
 </head>
 <body>
   <header class="topbar">
     <nav class="nav wrap" aria-label="Navegação principal">
       <a class="brand" href="#inicio" aria-label="Renzo Hayla, início"><span class="monogram">RH</span><span>RENZO HAYLA</span></a>
-      <div class="nav-links"><a href="#historia">História</a><a href="#conquistas">Conquistas</a><a href="#trajetoria">Trajetória</a><a href="#patrocinio">Patrocínio</a></div>
-      <a class="nav-cta" href="#patrocinio">Apoie o próximo capítulo <span aria-hidden="true">↗</span></a>
+      <div class="nav-links" id="nav-links"><a href="#historia">História</a><a href="#galeria">Galeria</a><a href="#conquistas">Conquistas</a><a href="#trajetoria">Trajetória</a><a href="#patrocinio">Patrocínio</a><a href="#contactos">Contactos</a></div>
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu ☰</button>
+      <a class="nav-cta" href="#patrocinio">Faça parte desta jornada <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
@@ -47,18 +57,13 @@
           <h1 class="display">Feito no<br><span>tatame.</span><br>Pronto para<br>o mundo.</h1>
           <p class="hero-lede">Sou Renzo Hayla. Cada treino constrói mais do que um atleta: constrói caráter, coragem e uma história que merece chegar mais longe.</p>
           <div class="hero-actions">
-            <a class="btn" href="#conquistas">Conheça as conquistas <span aria-hidden="true">↓</span></a>
-            <a class="btn btn-ghost" href="#patrocinio">Seja parceiro da jornada <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="#historia">Conheça a minha história <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-ghost" href="#patrocinio">Apoie a próxima conquista <span aria-hidden="true">↗</span></a>
           </div>
           <div class="hero-note"><span class="flag" aria-hidden="true">🇧🇷 🇵🇹</span><span>Raízes brasileiras. Jornada internacional.<br>Uma meta: evoluir, representar e vencer.</span></div>
         </div>
-        <div class="hero-art" aria-label="Identidade visual do atleta Renzo Hayla">
-          <div class="orbit"></div>
-          <div class="athlete-card">
-            <div class="card-top"><span>Atleta · Jiu-Jitsu</span><span>RH / 01</span></div>
-            <div class="card-middle"><div class="initials">RH</div><p>Disciplina em cada round</p><div class="belt-mark"></div></div>
-            <div class="card-bottom"><div><strong>RENZO<br>HAYLA</strong><span>Viseu · Portugal</span></div><span>GI / NOGI</span></div>
-          </div>
+        <div class="hero-art" aria-label="Fotografia de Renzo Hayla após uma competição de Jiu-Jitsu">
+          <div class="hero-photo-frame"><img class="hero-photo" src="images/renzo-european-kids-2026.webp" alt="Renzo Hayla com a medalha conquistada no European Kids No-Gi 2026" fetchpriority="high"></div>
           <div class="vertical-label">A próxima conquista começa hoje</div>
         </div>
       </div>
@@ -89,6 +94,30 @@
       </div>
     </section>
 
+    <section class="section gallery" id="galeria">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow">Momentos que ficam</div>
+          <h2 class="display">A jornada <span class="accent">em imagens.</span></h2>
+          <p>Do pódio aos grandes palcos competitivos, cada fotografia guarda um capítulo da evolução no tatame.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-card reveal">
+            <button type="button" class="gallery-open" data-image="images/renzo-european-kids-2026.webp" data-alt="Renzo Hayla com a medalha no European Kids No-Gi 2026" aria-label="Ampliar fotografia de Renzo no European Kids No-Gi 2026">
+              <img src="images/renzo-european-kids-2026.webp" alt="Renzo Hayla com medalha ao pescoço no evento European Kids No-Gi 2026" loading="lazy">
+            </button>
+            <figcaption class="gallery-caption"><small>Competição internacional · 2026</small><h3>European Kids No-Gi</h3><p>Registo de Renzo no campeonato europeu Kids No-Gi. Designação da categoria e resultado exato a confirmar com o responsável.</p></figcaption>
+          </figure>
+          <figure class="gallery-card reveal">
+            <button type="button" class="gallery-open" data-image="images/renzo-portugal-grand-slam-2026.webp" data-alt="Renzo Hayla a mostrar a medalha do Portugal Grand Slam 2026" aria-label="Ampliar fotografia de Renzo no Portugal Grand Slam 2026">
+              <img src="images/renzo-portugal-grand-slam-2026.webp" alt="Renzo Hayla de kimono preto a mostrar a medalha do Portugal Grand Slam 2026" loading="lazy">
+            </button>
+            <figcaption class="gallery-caption"><small>Portugal · 2026</small><h3>Portugal Grand Slam</h3><p>Uma conquista no circuito competitivo em Portugal, registada no pódio do Grand Slam 2026.</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="section achievements" id="conquistas">
       <div class="wrap">
         <div class="section-head reveal">
@@ -97,7 +126,7 @@
           <p>Uma trajetória competitiva entre Brasil e Portugal, construída com consistência e dedicação.</p>
         </div>
         <div class="achievement-grid">
-          <article class="achievement reveal"><span class="number">01</span><span class="year">2026</span><h3>Campeão Internacional Kids</h3><p>Nova conquista internacional na categoria juvenil, reforçando uma trajetória em crescimento.</p></article>
+          <article class="achievement reveal"><span class="number">01</span><span class="year">2026</span><h3>European Kids No-Gi</h3><p>Participação registada em fotografia. Confirmar nome oficial, categoria, data e classificação antes de publicar o título como resultado.</p></article>
           <article class="achievement reveal"><span class="number">02</span><span class="year">2026</span><h3>Bi-campeão Grand Slam IBJJF Portugal</h3><p>Ouro num dos circuitos de referência do Jiu-Jitsu.</p></article>
           <article class="achievement reveal"><span class="number">03</span><span class="year">2026</span><h3>Campeão RISE Open</h3><p>Primeiro lugar na categoria e vitória em superluta com cinturão.</p></article>
           <article class="achievement reveal"><span class="number">04</span><span class="year">2026</span><h3>Copa Ibérica Open</h3><p>Campeão em Gi e No-Gi, em Lisboa.</p></article>
@@ -133,7 +162,7 @@
             <div class="eyebrow">Marcas que acreditam no próximo campeão</div>
             <h2>Invista no talento.<br>Faça parte da história.</h2>
             <p>O patrocínio certo não apoia apenas uma competição — ajuda a construir o caminho até ela. Junte a sua marca a uma jornada de disciplina, superação e ambição internacional.</p>
-            <a class="btn" href="https://wa.me/351926388985?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20uma%20parceria%20ou%20patroc%C3%ADnio%20para%20o%20Renzo%20Hayla." target="_blank" rel="noopener noreferrer">Falar sobre patrocínio <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="https://wa.me/351926388985?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20uma%20parceria%20ou%20patroc%C3%ADnio%20para%20o%20Renzo%20Hayla." target="_blank" rel="noopener noreferrer">Conversar sobre patrocínio <span aria-hidden="true">↗</span></a>
           </div>
           <div>
             <ul class="sponsor-list">
@@ -171,8 +200,43 @@
       <p class="disclaimer">Conteúdo desportivo apresentado para fins informativos e de parceria. Informações e resultados devem ser validados pelo responsável antes da publicação definitiva.</p>
     </div>
   </footer>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografia ampliada" tabindex="-1">
+    <button class="lightbox-close" type="button" aria-label="Fechar fotografia">Fechar ✕</button>
+    <img src="" alt="">
+  </div>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+      navLinks.classList.toggle('mobile-open', !expanded);
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('mobile-open');
+    }));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = lightbox.querySelector('img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    let lastFocusedElement = null;
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightboxImage.src = '';
+      if (lastFocusedElement) lastFocusedElement.focus();
+    }
+    document.querySelectorAll('.gallery-open').forEach(button => button.addEventListener('click', () => {
+      lastFocusedElement = button;
+      lightboxImage.src = button.dataset.image;
+      lightboxImage.alt = button.dataset.alt;
+      lightbox.classList.add('open');
+      lightbox.focus();
+      lightboxClose.focus();
+    }));
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', event => { if (event.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
